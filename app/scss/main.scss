@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+$nr: no-repeat;
+$rb: right bottom;
+$rt: right top;
+$rc: right center;
+$cc: center center;
+$lc: left center;
+$lb: left bottom;
+$bc: bottom center;
+$i: !important;
+$tr: transparent;
+$bord: 1px solid #EAEAEA;
+$black: #000;
+$bcol: #f3ebdc;
+$font2: 'Ubuntu', sans-serif;
+
+
+@font-face {
+  font-family: 'Bandera Pro';
+  src: url('../fonts/BanderaPro.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bandera Pro';
+  src: url('../fonts/BanderaPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.snform {
+  background: rgb(240, 243, 250);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 730px;
+  width: 100%;
+  font-family: 'PT Sans', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+.snform__title-w {
+  padding-right: 176px;
+  position: relative;
+}
+
+.snform__title {  
+  font-family: 'Bandera Pro',Georgia,sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  color: rgb(33, 44, 78);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.snform__subtitle {
+  font-size: 18px;
+  line-height: 1.3;
+  color: rgb(33, 44, 78);
+  font-weight: 400;
+}
+
+.snform__bg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 144.15px;
+  height: 146.55px;
+  background-image: url("../img/snils-bg.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  top: auto;
+  bottom: -20px;
+}
+
+.snform__form {
+  margin-top: 30px;
+}
+
+.snform__row {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;  
+  align-items: flex-end;
+  &._error {
+    margin-bottom: 32px;
+  }
+}
+
+.snform__col-33 {
+  display: block;
+  width: 33.333%;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+.snform__col-33,
+.snform__col-66 {
+  &._error {  
+    position: relative;
+    .input-error-text {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(0%, calc(100% + 7px));
+    }
+  }
+}
+
+.snform__col-search {
+  position: relative;
+}
+
+.filter-where-list {
+  display: none;
+  position: absolute;
+  background: #FFFFFF;
+border: 1px solid #E2EBF4;
+width: 100%;
+max-width: 440px;
+border-radius: 8px;
+padding: 0;
+padding: 8px 0;
+margin-top: 3px;
+li {
+  list-style: none;  
+  padding: 10px 15px;
+  cursor: pointer;
+  &:hover {
+    background: #F2F7CD;
+  }
+}
+}
+
+.snform__col-66 {
+  width: 66.666%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.snform__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #212C4E;
+}
+
+.snform__input {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(211, 219, 236);
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: rgb(176, 191, 222);
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  &._error {
+    background: url("../img/input-error.svg") right 16px center no-repeat rgb(255, 255, 255);  
+    border: 1px solid rgb(220, 149, 149);
+  }
+  &._search {
+    padding-left: 42px;
+    background: #fff url("../img/search-i.svg") $nr left 17px center;
+  }
+}
+
+
+
+
+.input-error-text {
+  font-size: 12px;
+  color: rgb(220, 149, 149);
+  padding-left: 8px;
+  display: none;
+}
+
+.snform__button {
+  width: 100%;
+}
+
+.snform__confirm {
+  margin-top: 20px;
+  display: flex;
+  line-height: 1.3;
+  align-items: center;
+  input[type="checkbox"] {
+    display: none;    
+    &:checked {
+      + span {
+        display: flex;        
+        align-items: center;
+        justify-content: center;
+        &:before {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 12px;
+          background: #D2E558;
+          border-radius: 2px;
+        }
+      }
+    }
+    &._error {
+      + span {
+        border: 1px solid red;
+      }
+    }
+  }  
+}
+
+.snform__confirm-check {
+  flex: 0 0 auto;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(211, 219, 236);
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.snform__confirm-text {
+  margin-left: 9px;
+  font-size: 14px;
+  color: rgb(33, 44, 78);
+  line-height: 1.3;
+}
+
+.snform__phone-row {
+  margin-top: 22px;  
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+  &.show {
+    display: flex;
+  }
+}
+
+.snform__phone {
+  font-size: 18px;
+  color: rgb(65, 86, 154);
+  display: inline-block;
+  padding-left: 32px;
+  background-image: url("../img/phone-form-i.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  min-height: 22px;
+  font-family: 'Bandera Pro',Georgia,sans-serif;
+  font-weight: 500;
+}
+
+.snform__phone-number {
+  display: inline-block;
+  border-color: rgb(65, 86, 154) rgb(65, 86, 154) rgb(0, 0, 0);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.snform__time {
+  padding-left: 24px;
+  background-image: url("../img/clock-i.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgb(178, 184, 198);
+  max-width: 274px;
+}
+
+
+@import "_after-styless";
