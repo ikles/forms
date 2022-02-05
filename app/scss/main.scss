@@ -43,6 +43,10 @@ $font2: 'Ubuntu', sans-serif;
   margin-top: 80px;
 }
 
+.snform-2 {
+  margin-bottom: 40px;
+}
+
 .snform__title-w {
   padding-right: 176px;
   position: relative;
@@ -67,15 +71,13 @@ $font2: 'Ubuntu', sans-serif;
 
 .snform__bg {
   position: absolute;
-  top: 0px;
-  right: 0px;
   width: 144.15px;
   height: 146.55px;
   background-image: url("../img/snils-bg.svg");
   background-repeat: no-repeat;
-  background-position: left top;
-  top: auto;
-  bottom: -20px;
+  background-position: left top;    
+  right: 10px;
+  bottom: -17px;
 }
 
 .snform__form {
@@ -86,7 +88,8 @@ $font2: 'Ubuntu', sans-serif;
   display: flex;
   margin-left: -10px;
   margin-right: -10px;  
-  align-items: flex-end;
+  align-items: flex-end;  
+  flex-wrap: wrap;
   &._error {
     margin-bottom: 32px;
   }
@@ -122,21 +125,21 @@ $font2: 'Ubuntu', sans-serif;
   display: none;
   position: absolute;
   background: #FFFFFF;
-border: 1px solid #E2EBF4;
-width: 100%;
-max-width: 440px;
-border-radius: 8px;
-padding: 0;
-padding: 8px 0;
-margin-top: 3px;
-li {
-  list-style: none;  
-  padding: 10px 15px;
-  cursor: pointer;
-  &:hover {
-    background: #F2F7CD;
+  border: 1px solid #E2EBF4;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 8px;
+  padding: 0;
+  padding: 8px 0;
+  margin-top: 3px;
+  li {
+    list-style: none;  
+    padding: 10px 15px;
+    cursor: pointer;
+    &:hover {
+      background: #F2F7CD;
+    }
   }
-}
 }
 
 .snform__col-66 {
@@ -150,6 +153,7 @@ li {
   margin-bottom: 6px;
   font-size: 14px;
   color: #212C4E;
+  padding-left: 6px;
 }
 
 .snform__input {
@@ -168,15 +172,20 @@ li {
     outline: none;
   }
   &._error {
-    background: url("../img/input-error.svg") right 16px center no-repeat rgb(255, 255, 255);  
+    background: #fff url("../img/input-error.svg") $nr right 16px center no-repeat rgb(255, 255, 255);  
     border: 1px solid rgb(220, 149, 149);
+    &._search {      
+      background: url("../img/input-error.svg") right 16px center, 
+      url("../img/search-i.svg") $nr left 17px center;
+      background-repeat: no-repeat;
+      background-color: #FFF;
+    }
   }
   &._search {
     padding-left: 42px;
     background: #fff url("../img/search-i.svg") $nr left 17px center;
   }
 }
-
 
 
 
@@ -196,6 +205,8 @@ li {
   display: flex;
   line-height: 1.3;
   align-items: center;
+  width: 100%;
+  margin-left: 10px;
   input[type="checkbox"] {
     display: none;    
     &:checked {
@@ -281,4 +292,106 @@ li {
 }
 
 
+@media (max-width : 767px) {
+  .snform__row {    
+    flex-wrap: wrap;
+  }
+  .snform__col-33,
+  .snform__col-66 {
+    width: 100%;     
+      margin-bottom: 10px;    
+  }
+  .snform__input {
+    
+  }
+  .snform__confirm {
+    margin-top: 0;
+  }
+  .snform__col-33._error .input-error-text, .snform__col-66._error .input-error-text {
+    position: static;
+    transform: translate(0%, 0%);
+    margin-bottom: 10px;
+    margin-top: 6px;
+  }
+  .snform__col-33 {}
+  .snform__col-button {
+    order: 10;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .snform__col-button-2 {
+    margin-bottom: 0;
+  }
+}
+
+
+@media (max-width : 575px) {
+.snform__col-33._error .input-error-text, .snform__col-66._error .input-error-text {
+  padding-left: 0;
+}
+.snform__bg {
+  position: static;
+  order: -1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -49px;
+  margin-bottom: 20px;
+  width: 187px;
+  height: 193px;  
+          background-size: 100%;
+          transform: translate(-4px, 0%);
+}
+.snform__title-w {
+  padding-right: 0;
+  display: flex;  
+          flex-direction: column;
+}
+.snform__title {
+  margin-bottom: 7px;
+}
+.snform__subtitle {
+  line-height: 1.2;
+}
+.snform__form {
+  margin-top: 24px;
+}
+.snform__confirm-text {
+  font-size: 11px;
+}
+.snform__label {
+  padding-left: 0;
+}
+.snform__confirm input[type="checkbox"] + span {
+  width: 16px;
+  height: 16px;  
+}
+.snform__confirm input[type="checkbox"]:checked + span:before {
+  width: 10px;
+  height: 10px;
+}
+.snform__phone-row {  
+          flex-wrap: wrap;
+}
+.snform__time {
+  width: 100%;
+  margin-top: 15px;
+  max-width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @import "_after-styless";
+
+body.active {
+  background-position: top -169px center;
+}

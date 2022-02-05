@@ -5,23 +5,13 @@
   <!--meta name="viewport" content="width=1200px"-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />            
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Главная</title>  
+  <title>Главная</title>      
+  <link rel="stylesheet" href="https://pfrf-kabinet.ru/wp-content/cache/autoptimize/css/autoptimize_ae95e3fe37448b89fa081efb2b3cb4eb.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <style>
-    body {
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .contain {
-      font-weight: 500;
-font-size: 55px;
-line-height: 100%;
-font-feature-settings: 'pnum' on, 'lnum' on;
-color: #2F2F2F;
-    }
-  </style>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -31,21 +21,79 @@ color: #2F2F2F;
 </head>
 <body>
 
-  <div class="wrapper">
-    <header class="header">
 
-    </header>
-    <main class="main">
-     <div class="contain">
-       14 536
-     </div>
-    </main>
-    <footer class="footer">      
-    </footer>
+
+
+  <div class="snform snform-1">
+    <div class="snform__title-w">
+      <div class="snform__title">Узнать номер СНИЛС</div>
+      <div class="snform__subtitle">Оставьте свои данные, что бы узнать номер вашего СНИЛС</div>
+      <div class="snform__bg"></div>
+    </div>
+    <form class="snform__form snform__form-1">
+      <div class="snform__row">
+        <div class="snform__col-33">
+          <span class="snform__label">Ваше ФИО</span>
+          <input type="text" name="name" class="snform__input _req" placeholder="Представьтесь, пожалуйста">
+          <div class="input-error-text">Заполните поле</div>
+        </div>
+        <div class="snform__col-33">
+          <span class="snform__label">Дата рождения</span>
+          <input type="text" name="born" class="snform__input _req" placeholder="__.__.____">
+          <div class="input-error-text">Заполните поле</div>
+        </div>
+        <div class="snform__col-33 snform__col-button">
+          <button class="button snform__button snform__button-1">Узнать номер</button>
+        </div>
+        <label class="snform__confirm">
+        <input type="checkbox" class="snform__confirm-checkbox _req">        
+        <span class="snform__confirm-check"></span>
+        <span class="snform__confirm-text">Согласие на обработку персональных данных</span>
+      </label>
+      </div>      
+    </form>
   </div>
-  <!--wrapper-->
+
+
+
+
+  <div class="snform snform-2">
+    <div class="snform__title-w">
+      <div class="snform__title">Поиск телефона вашего отделения</div>
+      <div class="snform__subtitle">Актуальные номера горячей линии Пенсионного фонда</div>
+      <div class="snform__bg"></div>
+    </div>
+    <form class="snform__form snform__form-2">
+      <div class="snform__row">
+        <div class="snform__col-66 snform__col-search">
+          <span class="snform__label">Ваш город или район</span>
+          <input type="text" id="where_search" name="city" class="snform__input _search _req" placeholder="Укажите ваш населенный пункт" data-list=".filter-where-list">
+          <ul class="filter-where-list">
+            <li data-phone="8 (495) 600-05-41"><b>Анапа</b></li>
+            <li data-phone="8 (800) 320-05-51"><b>Адлер</b></li>
+            <li data-phone="8 (382) 480-05-61"><b>Анадырь</b></li>
+            <li data-phone="8 (695) 230-05-71"><b>Архангельск</b></li>
+            <li data-phone="8 (405) 410-05-91"><b>Бийск</b></li>
+          </ul>
+          <div class="input-error-text">Заполните поле</div>
+        </div>
+        <div class="snform__col-33 snform__col-button-2">
+          <span class="button snform__button snform__button-2">Узнать номер</span>
+        </div>
+      </div>
+    </form>
+    <div class="snform__phone-row">
+      <a href="mailto:88006000591" class="snform__phone">
+        <span class="snform__phone-number">8 (800) 600-05-91</span>
+      </a>
+      <div class="snform__time">время работы отделения пн-чт с 8:00 до 17:00, 
+      пт с 8:00 до 16:00, сб и вс выходной</div>
+    </div>
+  </div>
+  
 
   <script src="js/jquery-3.4.1.min.js"></script>      
+  <script src="js/jquery.hideseek.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>

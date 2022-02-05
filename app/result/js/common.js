@@ -63,7 +63,8 @@ jQuery(document).ready(function( $ ) {
   $('#where_search').on('input', function() { 
     $('.filter-where-list').show();
     $('.input-where-delete').show();
-    $('._error').removeClass('_error')
+    $('._error').removeClass('_error');
+    $('.snform__phone-row').removeClass('prep').removeClass('show');
   });
 
   $('#where_search').hideseek({
@@ -77,15 +78,52 @@ jQuery(document).ready(function( $ ) {
     e.preventDefault();    
     $('#where_search').val($(this).text());
     $('.filter-where-list').hide();
-
+    $('.snform__phone-row').addClass('prep');
 
     $('.snform__phone').attr('href', 'mailto:'+$(this).attr('data-phone'))
     $('.snform__phone-number').text($(this).attr('data-phone'));    
   });
 
   $('.snform__button-2').click(function (e) {
-    e.preventDefault();
-    $('.snform__phone-row').addClass('show')
+    e.preventDefault();    
+    if ( $('.snform__phone-row').hasClass('prep')) {
+      $('.snform__phone-row.prep').addClass('show');
+    } 
+    else {
+      $('#where_search').addClass('_error');
+      $('#where_search').parent().addClass('_error');
+    }
+
   });
+
+
+  $('body').click(function () {
+    $('.filter-where-list').hide();
+  });
+
+  $('.filter-where-list, #where_search').click(function (e) {
+    e.stopPropagation();
+  });
+
+
+/************************************/
+
+/*$('.wrapper').prepend('<span class="eye-3"></span>');
+let pg = parseInt(document.location.pathname.match(/\d+/))
+$('body').addClass('active').css('background-image', "url('../img/"+pg+".jpg')");
+$('body:not(.active)').css('background-image', "unset");
+
+$('.eye-3').click(function (e) {
+  e.preventDefault();  
+  $('body').toggleClass('active');
+  let pg = parseInt(document.location.pathname.match(/\d+/));
+  $('body.active').css('background-image', "url('../img/"+pg+".jpg')");
+  $('body:not(.active)').css('background-image', "unset");
+
+});
+*/
+/************************************/
+
+
 
 }); 
