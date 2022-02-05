@@ -92,6 +92,10 @@ $font2: 'Ubuntu', sans-serif;
   flex-wrap: wrap;
   &._error {
     margin-bottom: 32px;
+    margin-bottom: 0;
+    .snform__col-33 {
+      margin-bottom: 13px;
+    }    
   }
 }
 
@@ -232,6 +236,10 @@ $font2: 'Ubuntu', sans-serif;
   }  
 }
 
+.snform__confirm.mt_33 {
+  margin-top: 33px;
+}
+
 .snform__confirm-check {
   flex: 0 0 auto;
   background: rgb(255, 255, 255);
@@ -295,6 +303,9 @@ $font2: 'Ubuntu', sans-serif;
 @media (max-width : 767px) {
   .snform__row {    
     flex-wrap: wrap;
+  }
+  .snform__confirm.mt_33 {
+    margin-top: 0;
   }
   .snform__col-33,
   .snform__col-66 {

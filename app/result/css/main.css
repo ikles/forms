@@ -69,7 +69,10 @@
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
   .snform__row._error {
-    margin-bottom: 32px; }
+    margin-bottom: 32px;
+    margin-bottom: 0; }
+    .snform__row._error .snform__col-33 {
+      margin-bottom: 13px; }
 
 .snform__col-33 {
   display: block;
@@ -190,6 +193,9 @@
     .snform__confirm input[type="checkbox"]._error + span {
       border: 1px solid red; }
 
+.snform__confirm.mt_33 {
+  margin-top: 33px; }
+
 .snform__confirm-check {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
@@ -256,6 +262,8 @@
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
+  .snform__confirm.mt_33 {
+    margin-top: 0; }
   .snform__col-33,
   .snform__col-66 {
     width: 100%;

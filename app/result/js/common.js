@@ -5,14 +5,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector(formClass);
     const row = form.querySelector('.snform__row');
+    const confirm = form.querySelector('.snform__confirm');
 
     form.addEventListener('submit', formSend);
     async function formSend(e) {
       e.preventDefault();
-
+      confirm.classList.remove('mt_33');
       let error = formValidate(form);
 
       if (error === 0) {
+        
       //Отправить форму
     }
     else {
@@ -26,14 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     for (let index = 0; index < formReq.length; index++) {
       const input = formReq[index];
-      formRemoveError(input);      
-      if (input.value === '') {
+      formRemoveError(input);            
+      if (input.getAttribute("type") === "text" && input.value === '') {
         formAddError(input);
-        formAddError(row);
+        confirm.classList.add('mt_33');
         error++;
-      }
+      }      
       else if ( input.getAttribute("type") === "checkbox" && input.checked === false ) {
         formAddError(input);
+
         error++;
       }
     }
